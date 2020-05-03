@@ -1,3 +1,7 @@
+const { renderConfirmDeletionPopup } = require('../components/confirm-deletion-popup-component');
+const { removePost, editPost } = require('../services/posts-service');
+const { redirectToHomePage } = require('../routing');
+
 function renderPost(post) {
     const $post = document.createElement('div');
     const template = `
@@ -25,7 +29,7 @@ function renderPost(post) {
     $btnDel.addEventListener('click', () => {
         const id = post.id;
         renderConfirmDeletionPopup(() => {
-            $post.remove();            
+            $post.remove();
             removePost(id);
             redirectToHomePage();
         })
@@ -96,10 +100,12 @@ function displayMonthName(monthNumber) {
     const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return monthArray[monthNumber];
 }
+
 function displayDate3(post) {
     const date = new Date(post.date);
     return date.toLocaleString('pl-pl', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' })
 }
+
 function displayDate2(post) {
     const date = new Date(post.date);
     const dayNumber = date.getDate()
@@ -107,4 +113,8 @@ function displayDate2(post) {
     const monthName = displayMonthName(monthNumber);
     const time = `${date.getHours()}:${date.getMinutes()}`
     return `${dayNumber} ${monthName} ${time}`
+}
+
+module.exports = {
+    renderPost
 }

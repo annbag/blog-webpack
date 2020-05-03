@@ -3,3 +3,7 @@ function renderPage(template) {
     const outlet = document.querySelector('.outlet')
     outlet.innerHTML = template;
 }
+
+module.exports = {
+    renderPage
+}

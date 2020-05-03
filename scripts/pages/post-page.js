@@ -1,3 +1,8 @@
+const { renderPage } = require('../helpers/page-helper');
+const { fetchPost } = require('../services/posts-service');
+const { renderPostPanel } = require('../components/post-panel-component');
+const { displayError } = require('../components/error-message-component');
+
 async function renderPostPage({ postId }) {
     const template = `
         <div class="posts"></div>`
@@ -9,4 +14,8 @@ async function renderPostPage({ postId }) {
         const message = 'Prezentacja posta się nie powiodła'
         displayError(message);
     }
+}
+
+module.exports = {
+    renderPostPage
 }

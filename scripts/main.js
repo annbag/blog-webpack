@@ -1,3 +1,5 @@
+const { isHomePage, redirectToHomePage, routes, routing } = require('./routing');
+
 document.addEventListener('DOMContentLoaded', main)
 window.addEventListener('hashchange', onHashChange)
 
@@ -15,4 +17,3 @@ function main() {
 function onHashChange() {
     routing(routes);
 }
-

@@ -21,3 +21,7 @@ function renderAddPostForm(cb) {
         $textarea.value = '';
     })
 }
+
+module.exports = {
+    renderAddPostForm
+}

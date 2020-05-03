@@ -20,3 +20,7 @@ function renderAddCommentForm(post, $post, cb) {
         $newComment.value = '';
     })
 }
+
+module.exports = {
+    renderAddCommentForm
+}

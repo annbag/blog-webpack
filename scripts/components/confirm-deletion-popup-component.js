@@ -51,3 +51,7 @@ function showModal() {
     $modal.classList.add('d-block');
     $modal.style.backgroundColor = 'rgba(0,0,0,.5)';
 }
+
+module.exports = {
+    renderConfirmDeletionPopup
+}

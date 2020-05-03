@@ -2,7 +2,9 @@
     "name": "blog",
     "version": "1.0.0",
     "scripts": {
-        "start-server": "json-server data/posts.json"
+        "start-server": "json-server data/posts.json",
+        "build": "webpack",
+        "watch": "webpack -w"
     },
     "repository": {
         "type": "git",
@@ -15,6 +17,8 @@
     },
     "homepage": "https://github.com/annbag/blog#readme",
     "devDependencies": {
-        "json-server": "^0.16.1"
+        "json-server": "^0.16.1",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11"
     }
 }

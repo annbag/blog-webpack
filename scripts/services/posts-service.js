@@ -1,9 +1,10 @@
+const { CONFIG } = require('../config');
+
 async function fetchPosts() {
     const url = CONFIG.postsUrl;
     const response = await fetch(url);
     const posts = await response.json();
     return posts;
-
 }
 
 async function fetchPost(id) {
@@ -11,7 +12,6 @@ async function fetchPost(id) {
     const response = await fetch(url);
     const post = await response.json();
     return post;
-
 }
 
 function savePost(post) {
@@ -43,4 +43,12 @@ function editPost(post) {
         method: "PATCH",
         body
     });
+}
+
+module.exports = {
+    fetchPosts,
+    fetchPost,
+    savePost,
+    removePost,
+    editPost
 }
