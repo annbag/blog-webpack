@@ -1,9 +1,11 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const DashboardPlugin = require("webpack-dashboard/plugin");
 
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, 'src', 'scripts', 'main.js'),
+    entry: path.resolve(__dirname, 'src', 'scripts', 'main.js'),    
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -27,10 +29,14 @@ module.exports = {
                         name: '[name].[ext]'
                     }
                 }],
-            }
+            },
         ]
     },
-    plugins: [new MiniCssExtractPlugin({
-        filename: 'bundle.css'
-    })],
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'bundle.css'
+        }),
+        new OptimizeCSSAssetsPlugin({}),
+        new DashboardPlugin(),
+    ],
 }
