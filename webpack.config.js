@@ -5,7 +5,10 @@ const DashboardPlugin = require("webpack-dashboard/plugin");
 
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, 'src', 'scripts', 'main.js'),    
+    entry: path.resolve(__dirname, 'src', 'scripts', 'main.ts'),
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -30,6 +33,10 @@ module.exports = {
                     }
                 }],
             },
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader'
+            }
         ]
     },
     plugins: [
