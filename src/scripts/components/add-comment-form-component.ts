@@ -1,4 +1,4 @@
-function renderAddCommentForm(post, $post, cb) {
+function renderAddCommentForm($post: HTMLElement, cb: Function) {
     const $div = document.createElement('div');
     const template = `
         <form class="add-comment-form">
@@ -7,12 +7,15 @@ function renderAddCommentForm(post, $post, cb) {
         </form>`;
     $div.innerHTML = template;
     const $comments = $post.querySelector('.comments');
+    if (!$comments) { return }
     $comments.appendChild($div);
 
     const $form = $comments.querySelector('.add-comment-form');
+    if (!$form) { return }
     $form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const $newComment = $comments.querySelector('.new-comment');
+        const $newComment = $comments.querySelector<HTMLInputElement>('.new-comment');
+        if (!$newComment) { return }
         const id = 'comment-' + Date.now();
         const body = $newComment.value;
         const comment = { id, body }

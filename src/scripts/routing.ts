@@ -1,8 +1,10 @@
 import { renderHomePage } from './pages/home-page';
 import { renderPostPage } from './pages/post-page';
 import { renderNotFoundPage } from './pages/not-found-page';
+import { Routes } from './interfaces/routes.interface';
+import { UrlParams } from './interfaces/urlparams.interface';
 
-const routes = [
+const routes: Routes = [
     { path: '/', handler: renderHomePage },
     { path: '/posts/:postId', handler: renderPostPage },
     { path: '/not-found', handler: renderNotFoundPage }
@@ -12,11 +14,11 @@ function isHomePage() {
     return (location.hash === '')
 }
 
-function redirectToHomePage() {
+function redirectToHomePage(): void {
     location.hash = '/'
 }
 
-function redirectNotFoundPage() {
+function redirectNotFoundPage(): void {
     location.hash = '/not-found'
 }
 
@@ -25,10 +27,10 @@ function redirectNotFoundPage() {
  * getUrlParams('/posts/234876', '/posts/:postId') => { postId: 234876 }
  * getUrlParams('/posts/234876/hello-world', '/posts/:postId/:name') => { postId: 234876, name: 'hello-world' }
  */
-function getUrlParams(path, route) {
+function getUrlParams(path: string, route: string): UrlParams {
     const pathParts = path.split('/');
     const routeParts = route.split('/');
-    const result = {};
+    const result: UrlParams = {};
 
     for (let i = 0; i < routeParts.length; i++) {
         const paramName = routeParts[i];
@@ -52,7 +54,7 @@ function getUrlParams(path, route) {
  * isMatch('/', '/posts/:postId') => false
  * isMatch('/bleble', '/posts/:postId') => false
  */
-function isMatch(path, route) {
+function isMatch(path: string, route: string): boolean {
     const pathParts = path.split('/')
     const routeParts = route.split('/')
     for (let i = 0; i < routeParts.length; i++) {
@@ -81,7 +83,7 @@ function isMatch(path, route) {
  *   { path: '/', handler: Function2 },
  * ]
  */
-function routing(routes) {
+function routing(routes: Routes): void {
     // 1. Pobieramy aktualną ścieżkę z adresu URL
     const pathname = location.hash.slice(1);
 

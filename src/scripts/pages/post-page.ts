@@ -3,7 +3,11 @@ import { fetchPost } from '../services/posts-service';
 import { renderPostPanel } from '../components/post-panel-component';
 import { displayError } from '../components/error-message-component';
 
-async function renderPostPage({ postId }) {
+interface PostPageParams {
+    postId: number
+}
+
+async function renderPostPage({ postId }: PostPageParams) {
     const template = `
         <div class="posts"></div>`
     renderPage(template);
