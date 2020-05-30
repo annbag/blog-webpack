@@ -1,5 +1,5 @@
-const { editPost } = require('../services/posts-service');
-const { renderConfirmDeletionPopup } = require('../components/confirm-deletion-popup-component');
+import { editPost } from '../services/posts-service';
+import { renderConfirmDeletionPopup } from '../components/confirm-deletion-popup-component';
 
 let isEditEnabled = false;
 const ENTER_KEY_CODE = 13;
@@ -84,7 +84,8 @@ function renderEditComment(post, comment, $li) {
     $li.insertBefore($input, $commentBody);
 }
 
-module.exports = {
+export {
     renderComments,
-    renderComment
+    renderComment,
+    removeComment
 }

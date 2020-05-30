@@ -47,11 +47,11 @@ function hideModal() {
 function showModal() {
     const $body = document.querySelector('body');
     $body.classList.add('modal-open');
-    const $modal = document.querySelector('.modal');
+    const $modal = document.querySelector<HTMLElement>('.modal');
     $modal.classList.add('d-block');
     $modal.style.backgroundColor = 'rgba(0,0,0,.5)';
 }
 
-module.exports = {
+export {
     renderConfirmDeletionPopup
 }

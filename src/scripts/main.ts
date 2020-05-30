@@ -1,9 +1,8 @@
-require('../styles/style.css');
-require('../index.html');
-require('../404.html');
+import '../styles/style.css';
+import '../index.html';
+import '../404.html';
 
-export {}
-const { isHomePage, redirectToHomePage, routes, routing } = require('./routing');
+import { isHomePage, redirectToHomePage, routes, routing } from './routing';
 
 document.addEventListener('DOMContentLoaded', main)
 window.addEventListener('hashchange', onHashChange)

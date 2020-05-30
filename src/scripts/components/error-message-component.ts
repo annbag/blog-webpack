@@ -8,6 +8,6 @@ function displayError(message = generalMessage) {
     console.error(message);
 }
 
-module.exports = {
+export {
     displayError
 }

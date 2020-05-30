@@ -1,7 +1,7 @@
-const { renderPage } = require('../helpers/page-helper');
-const { renderPosts } = require('../components/posts-component');
-const { displayError } = require('../components/error-message-component');
-const { fetchPosts } = require('../services/posts-service');
+import { renderPage } from '../helpers/page-helper';
+import { renderPosts } from '../components/posts-component';
+import { displayError } from '../components/error-message-component';
+import { fetchPosts } from '../services/posts-service';
 
 async function renderHomePage() {
     const template = `
@@ -16,6 +16,6 @@ async function renderHomePage() {
     }
 }
 
-module.exports = {
+export {
     renderHomePage
 }

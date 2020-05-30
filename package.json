@@ -2,7 +2,7 @@
     "name": "blog",
     "version": "1.0.0",
     "scripts": {
-        "start": "http-server dist",
+        "start": "http-server -c-1 dist/",
         "start-server": "json-server data/posts.json",
         "prebuild": "npm run clear",
         "build": "webpack",

@@ -1,4 +1,4 @@
-const { renderPage } = require('../helpers/page-helper');
+import { renderPage } from '../helpers/page-helper';
 
 function renderNotFoundPage() {
     const template = `
@@ -6,6 +6,6 @@ function renderNotFoundPage() {
     renderPage(template);
 }
 
-module.exports = {
+export {
     renderNotFoundPage
 }

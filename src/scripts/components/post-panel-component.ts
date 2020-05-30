@@ -1,7 +1,7 @@
-const { renderPost } = require('../components/post-component');
-const { renderAddCommentForm } = require('../components/add-comment-form-component');
-const { renderComment, renderComments } = require('../components/comment-component');
-const { removeComment, editPost } = require('../services/posts-service');
+import { renderPost } from '../components/post-component';
+import { renderAddCommentForm } from '../components/add-comment-form-component';
+import { renderComment, renderComments, removeComment } from '../components/comment-component';
+import { editPost } from '../services/posts-service';
 
 function renderPostPanel(post) {
     const $post = renderPost(post);
@@ -16,6 +16,6 @@ function renderPostPanel(post) {
     renderComments(post, $post);
 }
 
-module.exports = {
+export {
     renderPostPanel
 }

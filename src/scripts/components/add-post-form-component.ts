@@ -22,6 +22,6 @@ function renderAddPostForm(cb) {
     })
 }
 
-module.exports = {
+export {
     renderAddPostForm
 }

@@ -1,6 +1,6 @@
-const { renderConfirmDeletionPopup } = require('../components/confirm-deletion-popup-component');
-const { removePost, editPost } = require('../services/posts-service');
-const { redirectToHomePage } = require('../routing');
+import { renderConfirmDeletionPopup } from '../components/confirm-deletion-popup-component';
+import { removePost, editPost } from '../services/posts-service';
+import { redirectToHomePage } from '../routing';
 
 function renderPost(post) {
     const $post = document.createElement('div');
@@ -115,6 +115,6 @@ function displayDate2(post) {
     return `${dayNumber} ${monthName} ${time}`
 }
 
-module.exports = {
+export {
     renderPost
 }

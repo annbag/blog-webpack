@@ -1,6 +1,6 @@
-const { renderHomePage } = require('./pages/home-page');
-const { renderPostPage } = require('./pages/post-page');
-const { renderNotFoundPage } = require('./pages/not-found-page')
+import { renderHomePage } from './pages/home-page';
+import { renderPostPage } from './pages/post-page';
+import { renderNotFoundPage } from './pages/not-found-page';
 
 const routes = [
     { path: '/', handler: renderHomePage },
@@ -99,7 +99,7 @@ function routing(routes) {
     redirectNotFoundPage()
 }
 
-module.exports = {
+export {
     isHomePage,
     redirectToHomePage,
     redirectNotFoundPage,

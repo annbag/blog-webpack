@@ -4,6 +4,6 @@ function renderPage(template) {
     outlet.innerHTML = template;
 }
 
-module.exports = {
+export {
     renderPage
 }

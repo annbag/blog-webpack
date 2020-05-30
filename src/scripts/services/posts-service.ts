@@ -1,4 +1,4 @@
-const { CONFIG } = require('../config');
+import { CONFIG } from '../config';
 
 async function fetchPosts() {
     const url = CONFIG.postsUrl;
@@ -45,7 +45,7 @@ function editPost(post) {
     });
 }
 
-module.exports = {
+export {
     fetchPosts,
     fetchPost,
     savePost,

@@ -15,12 +15,12 @@ function renderAddCommentForm(post, $post, cb) {
         const $newComment = $comments.querySelector('.new-comment');
         const id = 'comment-' + Date.now();
         const body = $newComment.value;
-        const comment = {id, body}
+        const comment = { id, body }
         cb(comment);
         $newComment.value = '';
     })
 }
 
-module.exports = {
+export {
     renderAddCommentForm
 }
